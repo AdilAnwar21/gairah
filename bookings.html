@@ -1,0 +1,475 @@
+<link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' rel='stylesheet'>
+<link href='' rel='stylesheet'>
+<style>body {
+background-image: url(assets/img/stay/gairah\ main.jpg)
+}
+
+.section {
+position: relative;
+height: 100vh;
+}
+
+.section .section-center {
+position: absolute;
+top: 50%;
+left: 0;
+right: 0;
+-webkit-transform: translateY(-50%);
+transform: translateY(-50%);
+}
+
+#booking {
+font-family: 'Raleway', sans-serif;
+}
+
+.booking-form {
+position: relative;
+max-width: 642px;
+width: 100%;
+margin: auto;
+padding: 40px;
+overflow: hidden;
+background-image: url();
+background-size: cover;
+border-radius: 5px;
+z-index: 20;
+}
+
+.booking-form::before {
+content: '';
+position: absolute;
+left: 0;
+right: 0;
+bottom: 0;
+top: 0;
+background: rgba(0, 0, 0, 0.7);
+z-index: -1;
+}
+
+.booking-form .form-header {
+text-align: center;
+position: relative;
+margin-bottom: 30px;
+}
+
+.booking-form .form-header h1 {
+font-weight: 700;
+text-transform: capitalize;
+font-size: 42px;
+margin: 0px;
+color: #fff;
+}
+
+.booking-form .form-group {
+position: relative;
+margin-bottom: 30px;
+}
+
+.booking-form .form-control {
+background-color: rgba(255, 255, 255, 0.2);
+height: 60px;
+padding: 0px 25px;
+border: none;
+border-radius: 40px;
+color: #fff;
+-webkit-box-shadow: 0px 0px 0px 2px transparent;
+box-shadow: 0px 0px 0px 2px transparent;
+-webkit-transition: 0.2s;
+transition: 0.2s;
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+color: rgba(255, 255, 255, 0.5);
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+color: rgba(255, 255, 255, 0.5);
+}
+
+.booking-form .form-control::placeholder {
+color: rgba(255, 255, 255, 0.5);
+}
+
+.booking-form .form-control:focus {
+-webkit-box-shadow: 0px 0px 0px 2px #ff8846;
+box-shadow: 0px 0px 0px 2px #ff8846;
+}
+
+.booking-form input[type="date"].form-control {
+padding-top: 16px;
+}
+
+.booking-form input[type="date"].form-control:invalid {
+color: rgba(255, 255, 255, 0.5);
+}
+
+.booking-form input[type="date"].form-control+.form-label {
+opacity: 1;
+top: 10px;
+}
+
+.booking-form select.form-control {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+}
+
+.booking-form select.form-control:invalid {
+color: rgba(255, 255, 255, 0.5);
+}
+
+.booking-form select.form-control+.select-arrow {
+position: absolute;
+right: 15px;
+top: 50%;
+-webkit-transform: translateY(-50%);
+transform: translateY(-50%);
+width: 32px;
+line-height: 32px;
+height: 32px;
+text-align: center;
+pointer-events: none;
+color: rgba(255, 255, 255, 0.5);
+font-size: 14px;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+content: '\279C';
+display: block;
+-webkit-transform: rotate(90deg);
+transform: rotate(90deg);
+}
+
+.booking-form select.form-control option {
+color: #000;
+}
+
+.booking-form .form-label {
+position: absolute;
+top: -10px;
+left: 25px;
+opacity: 0;
+color: #ff8846;
+font-size: 11px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 1.3px;
+height: 15px;
+line-height: 15px;
+-webkit-transition: 0.2s all;
+transition: 0.2s all;
+}
+
+.booking-form .form-group.input-not-empty .form-control {
+padding-top: 16px;
+}
+
+.booking-form .form-group.input-not-empty .form-label {
+opacity: 1;
+top: 10px;
+}
+
+.booking-form .submit-btn {
+color: #fff;
+background-color: #e35e0a;
+font-weight: 700;
+height: 60px;
+padding: 10px 30px;
+width: 100%;
+border-radius: 40px;
+border: none;
+text-transform: uppercase;
+font-size: 16px;
+letter-spacing: 1.3px;
+-webkit-transition: 0.2s all;
+transition: 0.2s all;
+}
+
+.booking-form .submit-btn:hover,
+.booking-form .submit-btn:focus {
+opacity: 0.9;
+}
+
+
+  .custom-div {
+      padding: 20px;
+      background-color: #DB5600;
+      box-sizing: border-box;
+      opacity: 0.7; /* Include padding in the width calculation */
+  }
+
+  /* Media query for screens with a width of 768px or more */
+  @media screen and (min-width: 768px) {
+      .custom-div {
+          margin: 20px;
+      }
+  }
+
+  /* Media query for screens with a width of 480px or more, up to 767px */
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+      .custom-div {
+          margin: 10px;
+      }
+  }
+
+  /* Media query for screens with a width of less than 480px */
+  @media screen and (max-width: 479px) {
+      .custom-div {
+          margin: 5px;
+      }
+  }
+
+  /*--------------------------------------------------------------
+  # Preloader
+  --------------------------------------------------------------*/
+  #preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    overflow: hidden;
+    background: #fff;
+    transition: all 0.6s ease-out;
+  }
+  
+  #preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #fff;
+    border-color: var(--color-primary) transparent var(--color-primary) transparent;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: animate-preloader 1.5s linear infinite;
+  }
+  
+  @keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+<script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js'></script>
+<script type='text/javascript'></script> 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  "use strict";
+  /**
+   * Preloader
+   */
+   const preloader = document.querySelector('#preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      preloader.remove();
+    });
+  }
+})
+</script>
+<div id="booking" class="section">
+<div class="section-center">
+<div class="container">
+<div class="row">
+<div class="booking-form">
+<div class="form-header">
+<h1>Make your reservation</h1>
+</div>
+<form>
+<div class="form-group">
+<input class="form-control" type="text" id="name" placeholder="Name">
+<span class="form-label">Name</span>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+    <input class="form-control" type="date" id="checkin" required>
+    <span class="form-label">Check In</span>
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+    <input class="form-control" type="date" id="checkout" required>
+    <span class="form-label">Check out</span>
+</div>
+</div>
+</div>
+<div class="col-md-12">
+    <div class="form-group">
+        <select  id="type" class="form-control" required>
+            <option value=""  selected hidden>Stay type</option>
+            <option>Deluxe Cottage</option>
+            <option>Bamboo Cottage</option>
+            <option>Wooden Cottage</option>
+        </select>
+        <span class="select-arrow"></span>
+        <span class="form-label">Rooms</span>
+    </div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="form-group">
+    <select class="form-control" id="rooms" required>
+        <option value="" selected hidden>no of rooms</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select>
+    <span class="select-arrow"></span>
+    <span class="form-label">Rooms</span>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="form-group">
+    <select id="adults" class="form-control" required>
+        <option value=""  selected hidden>no of adults</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select>
+    <span class="select-arrow"></span>
+    <span class="form-label">Adults</span>
+</div>
+</div>
+<div class="col-md-4">
+<div class="form-group">
+    <select id="child" class="form-control" required>
+        <option value=""  selected hidden>no of children</option>
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+    </select>
+    <span class="select-arrow"></span>
+    <span class="form-label">Children</span>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+    <input class="form-control" id="email" type="email" placeholder="Enter your Email">
+    <span class="form-label">Email</span>
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+    <input class="form-control" id="phoneno" type="tel" placeholder="Enter you Phone">
+    <span class="form-label">Phone</span>
+</div>
+</div>
+</div>
+<div class="form-btn">
+<button type="button" class="submit-btn" onclick="whatsapp();">Book Now</button>
+</div>
+</form>
+<div class="custom-div text-center">
+    <!-- Content inside the div goes here -->
+    <p style="color: #fff;">*Prices are indicative and dynamic, subject to many factors. Please get in touch with our Reservations team at +91 8078990499 for the day’s rate</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div> 
+
+
+<div id="preloader"></div>
+
+<!---- JS: jQuery v 3.6.0 --> 
+<script src="https://webaxen.com/js/jquery3.6.min.js"></script> 
+<!--JS: Bootstra --> 
+<script src="https://webaxen.com/js/bootstrap.bundle.min.js"></script> 
+<!-- JS: Owl Carousel -->
+ <script src="https://webaxen.com/js/owl.carousel.min.js"></script> 
+<!--JS: Designer Script --> 
+<script src="https://webaxen.com/js/script.js"></script>
+<script>
+    function whatsapp(){
+    var name = document.getElementById("name").value;
+    var checkin = document.getElementById("checkin").value;
+    var checkout = document.getElementById("checkout").value;
+    var stay = document.getElementById("type").value;
+    var rooms = document.getElementById("rooms").value;
+    var adults = document.getElementById("adults").value;
+    var child = document.getElementById("child").value;
+    var email = document.getElementById("email").value;
+    var phoneno = document.getElementById("phoneno").value;
+    var today = new Date();
+
+
+    if (name == "") {
+                alert("Name must be filled out");
+                return false;
+    }
+
+   
+   // Check if check-in date is in the past
+    if (checkin < today) {
+    alert("Check-in date cannot be in the past");
+    return false;
+    }
+
+    // Check if check-out date is in the past or before check-in date
+    if (checkout <= today || checkout <= checkin) {
+    alert("Invalid check-out date");
+    return false;
+    }
+    
+    if (rooms === "") {
+                alert("Please select number of rooms");
+                return false;
+    }
+
+    if (adults === "") {
+                alert("Please select number of adults");
+                return false;
+    }
+
+    if (child === "") {
+                alert("Please select number of childrens");
+                return false;
+    }
+
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (email == "") {
+                alert("Email must be filled out");
+                return false;
+    } else if (!emailPattern.test(email)) {
+                alert("Invalid email format");
+                return false;
+    }
+
+    if(phoneno === ""){
+        alert("please enter your phone number");
+        return false;
+    }
+    
+
+
+    var url="https://wa.me/+916238226961?text="
+    +"*NAME :* "+name+"%0a"
+    +"*CHECKIN :* "+checkin+"%0a"
+    +"*CHECKOUT :* "+checkout+"%0a"
+    +"*STAY TYPE :* "+stay+"%0a"
+    +"*ROOMS :* "+rooms+"%0a"
+    +"*ADULTS :* "+adults+"%0a"
+    +"*CHILD :* "+child+"%0a"
+    +"*EMAIL :* "+email+"%0a"
+    +"*PHONENO :* "+phoneno;
+
+    window.open(url,'_blank').focus;
+
+}
+</script>
+
+
+
+
+
