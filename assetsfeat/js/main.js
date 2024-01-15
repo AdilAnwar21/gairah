@@ -74,6 +74,15 @@
     window.addEventListener('load', headerScrolled)
     onscroll(document, headerScrolled)
   }
+  /**
+   * Preloader
+   */
+  let preloader = select('#preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      preloader.remove()
+    });
+  }
 
   /**
    * Back to top button
